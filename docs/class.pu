@@ -1,0 +1,33 @@
+@startuml spam_mail_report_tool
+class Mail{
+    - string subject
+    - string sender
+    - sring header
+    - string body
+    + receiveEmail():void
+    + findUrl():string
+}
+
+class Url {
+    - string url
+    - bool judge
+}
+
+class Controller{
+
+}
+
+class View{
+    
+}
+
+Mail *-- Url
+
+Controller ..> Mail
+Controller ..> Url
+Controller ..> View
+
+View ..> Url
+View ..> Mail
+
+@enduml
